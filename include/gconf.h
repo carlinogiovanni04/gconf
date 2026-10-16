@@ -6,10 +6,14 @@
 typedef struct{
     uint32_t magic;      // GCF\0 - 0x47434600
     uint32_t numEntries; // up to 4 billion
-} GCONF_HEADER;
+    uint32_t version;    // 0.1 current
+    uint32_t padding;    // Unused for now
+} GConfHeader;
 
 typedef struct {
-} GCONF_ENTRY;
+    const char *key;
+    const char *value;
+} GConfEntry;
 
 
 #ifndef GCONF_IMPLEMENTATION
